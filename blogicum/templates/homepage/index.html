@@ -11,13 +11,13 @@
       <article>
         <ul>
           <li>
-            {{ post.location }}              
+            Место: {{ post.location }}
           </li>
           <li>
-            {{ post.date }}
+            Дата: {{ post.date }}
           </li>
           <li>
-            {{ post.category }}: <a href="not-my-day">not-my-day</a>
+            Категория: <a href="not-my-day">{{ post.category }}</a>
           </li>
         </ul>          
         <!-- Первые 10 слов -->
@@ -28,4 +28,3 @@
         </article>
     {% endfor %}
 {% endblock %}
-
