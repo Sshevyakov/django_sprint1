@@ -1,4 +1,5 @@
-<!DOCTYPE html> 
+{% extends "base.html" %}
+<!--<!DOCTYPE html> 
 <html lang="ru"> 
   <head>    
     <meta charset="utf-8">
@@ -7,9 +8,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>Лента записей</title>
-  </head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">-->
+    {% block title %}
+      Лента записей
+    {% endblock %}
+  <!--</head>-->
   <body>	   
     <header>
       <nav class="navbar navbar-light" style="background-color: lightskyblue">
