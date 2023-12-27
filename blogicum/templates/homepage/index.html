@@ -14,7 +14,7 @@
     {% endblock %}
   <!--</head>-->
   <body>	   
-    <header>
+    <!--<header>
       <nav class="navbar navbar-light" style="background-color: lightskyblue">
         <div class="container">
           <a class="navbar-brand" href="index.html">
@@ -40,8 +40,9 @@
           </ul>      
         </div>
       </nav> 
-    </header>
+    </header>-->
     <main>
+      {% block content %}
       <div class="container py-5">
         <h1>Лента записей</h1>                        
         <!-- Перебираем в цикле все посты -->
@@ -103,9 +104,10 @@
           <a href="detail.html">Читать полный текст</a>
         </article>                 
       </div>
+      {% endblock %}
     </main>
-    <footer class="border-top text-center py-3">
+    <!--<footer class="border-top text-center py-3">
       <p>© Блогикум</p>    
-    </footer>
+    </footer>-->
   </body>
 </html>
