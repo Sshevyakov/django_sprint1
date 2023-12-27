@@ -55,7 +55,7 @@ def post_detail(request, pk):
     return render(request, template, context)
 
 
-def category_posts(request):
+def category_posts(request, category_slug):
     template = 'blog/category.html'
-    context = {'post': posts}
+    context = {'post': category_slug}
     return render(request, template, context)
