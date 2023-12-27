@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!--<!DOCTYPE html> 
 <html lang="ru"> 
   <head>    
     <meta charset="utf-8">
@@ -7,9 +7,12 @@
     <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>Наши правила</title>
-  </head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">-->
+    {% extends "base.html" %}
+    {% block title %}
+      Наши правила
+    {% endblock %}
+  <!--</head>
   <body>	   
     <header>
       <nav class="navbar navbar-light" style="background-color: lightskyblue">
@@ -38,7 +41,8 @@
         </div>
       </nav> 
     </header>
-    <main>
+    <main>-->
+      {% block content %}
       <div class="container py-5">                        
         <h1>Наши правила</h1>
         <p>
@@ -64,9 +68,10 @@
           определяете вы и только вы.  
         </p>
       </div>
-    </main>
+      {% endblock %}
+    <!--</main>
     <footer class="border-top text-center py-3">
       <p>© Блогикум</p>    
     </footer>
   </body>
-</html>
+</html>-->

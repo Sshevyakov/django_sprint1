@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!--<!DOCTYPE html> 
 <html lang="ru"> 
   <head>    
     <meta charset="utf-8">
@@ -7,11 +7,14 @@
     <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>О проекте</title>
-  </head>
-  <body>	   
-    <header>
+    <link rel="stylesheet" href="css/bootstrap.min.css">-->
+    {% extends "base.html" %}
+    {% block title %}
+    О проекте
+    {% endblock %}
+  <!--</head>
+  <body>-->	   
+    <!--<header>
       <nav class="navbar navbar-light" style="background-color: lightskyblue">
         <div class="container">
           <a class="navbar-brand" href="index.html">
@@ -38,8 +41,9 @@
         </div>
       </nav> 
     </header>
-    <main>
-      <div class="container py-5">                        
+    <main>-->
+      {% block content %}
+      <div class="container py-5">                
         <h1>О проекте</h1>
         <p>
           Блогикум — это дом для творческих людей. Это — сообщество людей, для которых 
@@ -56,9 +60,10 @@
           основные черты наших пользователей.
         </p>           
       </div>
-    </main>
+      {% endblock %}
+    <!--</main>
     <footer class="border-top text-center py-3">
       <p>© Блогикум</p>    
     </footer>
   </body>
-</html>
+</html>-->
