@@ -109,6 +109,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+html/
+blogicum/static_dev/css
 
 # Spyder project settings
 .spyderproject
