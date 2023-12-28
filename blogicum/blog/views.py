@@ -1,6 +1,8 @@
+from typing import Union
+
 from django.http import Http404
 from django.shortcuts import render
-from typing import Union
+
 
 posts: list[dict[str, Union[str, int]]] = [
     {
@@ -46,8 +48,8 @@ posts: list[dict[str, Union[str, int]]] = [
 ]
 
 posts_by_id: dict[int, dict[str, Union[str, int]]] = {}
-for i in range(len(posts)):
-    posts_by_id[i] = posts[i]
+for post in posts:
+    posts_by_id[post['id']] = post
 
 
 def index(request):
