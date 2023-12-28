@@ -49,6 +49,7 @@ def index(request):
     context = {'post': posts}
     return render(request, template, context)
 
+
 def post_detail(request, pk):
     template = 'blog/detail.html'
     context = {'post': posts[pk]}
