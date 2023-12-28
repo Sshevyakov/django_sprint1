@@ -1,6 +1,8 @@
+from django.http import Http404
+
 from django.shortcuts import render
 
-posts = [
+posts: list[dict] = [
     {
         'id': 0,
         'location': 'Остров отчаянья',
@@ -43,20 +45,22 @@ posts = [
     },
 ]
 
+dict_id = {
+    0: posts[0],
+    1: posts[1],
+    2: posts[2]
+    }
 
-def index(request):
-    template = 'blog/index.html'
-    context = {'post': posts}
-    return render(request, template, context)
+
+def index(request): 
+    return render(request, 'blog/index.html', {'post': posts})
 
 
 def post_detail(request, pk):
-    template = 'blog/detail.html'
-    context = {'post': posts[pk]}
-    return render(request, template, context)
+    if pk not in dict_id:
+       raise Http404('Page not found')
+    return render(request, 'blog/detail.html', {'post': dict_id[pk]})
 
 
 def category_posts(request, category_slug):
-    template = 'blog/category.html'
-    context = {'post': category_slug}
-    return render(request, template, context)
+    return render(request, 'blog/category.html', {'category': category_slug})
