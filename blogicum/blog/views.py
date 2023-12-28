@@ -49,16 +49,16 @@ dict_id = {
     0: posts[0],
     1: posts[1],
     2: posts[2]
-    }
+}
 
 
-def index(request): 
+def index(request):
     return render(request, 'blog/index.html', {'post': posts})
 
 
 def post_detail(request, pk):
     if pk not in dict_id:
-       raise Http404('Page not found')
+        raise Http404('Page not found')
     return render(request, 'blog/detail.html', {'post': dict_id[pk]})
 
 
