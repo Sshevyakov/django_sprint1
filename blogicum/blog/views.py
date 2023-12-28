@@ -1,8 +1,8 @@
 from django.http import Http404
-
 from django.shortcuts import render
+from typing import Union
 
-posts: list[dict] = [
+posts: list[dict[str, Union[str, int]]] = [
     {
         'id': 0,
         'location': 'Остров отчаянья',
@@ -45,11 +45,9 @@ posts: list[dict] = [
     },
 ]
 
-dict_id = {
-    0: posts[0],
-    1: posts[1],
-    2: posts[2]
-}
+posts_by_id: dict[int, dict[str, Union[str, int]]] = {}
+for i in range(len(posts)):
+    posts_by_id[i] = posts[i]
 
 
 def index(request):
@@ -57,9 +55,9 @@ def index(request):
 
 
 def post_detail(request, pk):
-    if pk not in dict_id:
+    if pk not in posts_by_id:
         raise Http404('Page not found')
-    return render(request, 'blog/detail.html', {'post': dict_id[pk]})
+    return render(request, 'blog/detail.html', {'post': posts_by_id[pk]})
 
 
 def category_posts(request, category_slug):
